@@ -9,14 +9,21 @@ interface PropertyListProps {
   title: string
   subtitle?: string
   emptyMessage?: string
+  headingLevel?: 'h1' | 'h2'
 }
 
-export default function PropertyList({ 
-  properties, 
-  title, 
+const ease = [0.22, 1, 0.36, 1]
+
+export default function PropertyList({
+  properties,
+  title,
   subtitle,
-  emptyMessage = 'Aucun bien disponible pour le moment.'
+  emptyMessage = 'Aucun bien disponible pour le moment.',
+  headingLevel = 'h1',
 }: PropertyListProps) {
+  const MotionHeading = headingLevel === 'h1' ? motion.h1 : motion.h2
+  const cardHeadingLevel = headingLevel === 'h1' ? 'h2' : 'h3'
+
   return (
     <section className="editorial-py bg-cream">
       <div className="section-editorial">
@@ -26,26 +33,26 @@ export default function PropertyList({
             className="editorial-badge"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, ease }}
           >
             {properties.length} bien{properties.length > 1 ? 's' : ''} disponible{properties.length > 1 ? 's' : ''}
           </motion.span>
 
-          <motion.h1 
+          <MotionHeading
             className="font-serif text-display-lg text-ink mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
           >
             {title}
-          </motion.h1>
-          
+          </MotionHeading>
+
           {subtitle && (
-            <motion.p 
+            <motion.p
               className="text-editorial text-stone mt-4 max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: 0.2, ease }}
             >
               {subtitle}
             </motion.p>
@@ -56,7 +63,7 @@ export default function PropertyList({
         {properties.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {properties.map((property, index) => (
-              <PropertyCard key={property.id} property={property} index={index} />
+              <PropertyCard key={property.id} property={property} index={index} headingLevel={cardHeadingLevel} />
             ))}
           </div>
         ) : (

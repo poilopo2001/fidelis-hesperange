@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next'
 import type { Property } from '../../data/properties'
+import type { PropertyTypeConfig } from '../../data/propertyTypes'
 
 const siteConfig = {
   name: 'Fidelis Hesperange',
@@ -210,8 +211,8 @@ export function generateHesperangeMetadata(type: 'achat' | 'location'): Metadata
   const actionVerb = type === 'achat' ? 'acheter' : 'louer'
   
   return {
-    title: `${action} à Hesperange — Toutes les sections`,
-    description: `${action} votre bien immobilier à Hesperange. Découvrez les ${type === 'achat' ? 'biens en vente' : 'locations'} dans toutes les sections : Alzingen, Fentange, Itzig, Howald.`,
+    title: `${type === 'achat' ? 'Achat' : 'Location'} à Hesperange`,
+    description: `${type === 'achat' ? 'Achetez' : 'Louez'} votre bien immobilier à Hesperange. Découvrez les ${type === 'achat' ? 'biens en vente' : 'locations'} dans toutes les sections : Alzingen, Fentange, Itzig, Howald.`,
     keywords: [
       `${actionVerb} hesperange`,
       `immobilier hesperange ${type}`,
@@ -226,7 +227,7 @@ export function generateHesperangeMetadata(type: 'achat' | 'location'): Metadata
       type: 'website',
       url: `${siteConfig.url}/${type}/hesperange`,
       title: `${action} à Hesperange — Fidelis Hesperange`,
-      description: `${action} votre bien immobilier à Hesperange. Découvrez les ${type === 'achat' ? 'biens en vente' : 'locations'} dans toutes les sections.`,
+      description: `${type === 'achat' ? 'Achetez' : 'Louez'} votre bien immobilier à Hesperange. Découvrez les ${type === 'achat' ? 'biens en vente' : 'locations'} dans toutes les sections.`,
       images: [
         {
           url: `${siteConfig.url}/opengraph-image`,
@@ -239,11 +240,106 @@ export function generateHesperangeMetadata(type: 'achat' | 'location'): Metadata
     twitter: {
       card: 'summary_large_image',
       title: `${action} à Hesperange — Fidelis Hesperange`,
-      description: `${action} votre bien immobilier à Hesperange. Découvrez les ${type === 'achat' ? 'biens en vente' : 'locations'} dans toutes les sections.`,
+      description: `${type === 'achat' ? 'Achetez' : 'Louez'} votre bien immobilier à Hesperange. Découvrez les ${type === 'achat' ? 'biens en vente' : 'locations'} dans toutes les sections.`,
       images: [`${siteConfig.url}/opengraph-image`],
     },
     alternates: {
       canonical: `/${type}/hesperange`,
+    },
+  }
+}
+
+// Métadonnées pour les pages type de bien
+export function generatePropertyTypeMetadata(
+  transaction: 'achat' | 'location',
+  config: PropertyTypeConfig
+): Metadata {
+  const action = transaction === 'achat' ? 'à vendre' : 'à louer'
+  const verb = transaction === 'achat' ? 'Achetez' : 'Louez'
+  const title = `${config.label} ${action} à Hesperange`
+  const description = `${verb} un ${config.labelSingular.toLowerCase()} à Hesperange. ${config.description}`
+  const url = `/${transaction}/${config.slug}`
+
+  return {
+    title,
+    description,
+    keywords: [
+      `${config.labelSingular.toLowerCase()} ${transaction === 'achat' ? 'à vendre' : 'à louer'} hesperange`,
+      `${config.slug} hesperange`,
+      `${transaction} ${config.labelSingular.toLowerCase()} hesperange`,
+      'immobilier Hesperange',
+      'immobilier Luxembourg',
+    ],
+    openGraph: {
+      type: 'website',
+      url: `${siteConfig.url}${url}`,
+      title: `${title} — Fidelis Hesperange`,
+      description,
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${title} — Fidelis Hesperange`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} — Fidelis Hesperange`,
+      description,
+      images: [`${siteConfig.url}/opengraph-image`],
+    },
+    alternates: {
+      canonical: url,
+    },
+  }
+}
+
+// Métadonnées pour les pages type de bien + ville
+export function generatePropertyTypeCityMetadata(
+  transaction: 'achat' | 'location',
+  config: PropertyTypeConfig,
+  cityName: string
+): Metadata {
+  const action = transaction === 'achat' ? 'à vendre' : 'à louer'
+  const verb = transaction === 'achat' ? 'Achetez' : 'Louez'
+  const title = `${config.label} ${action} à ${cityName}`
+  const description = `${verb} un ${config.labelSingular.toLowerCase()} à ${cityName}, section de la commune de Hesperange. ${config.description}`
+  const url = `/${transaction}/${config.slug}/${cityName.toLowerCase()}`
+
+  return {
+    title,
+    description,
+    keywords: [
+      `${config.labelSingular.toLowerCase()} ${transaction === 'achat' ? 'à vendre' : 'à louer'} ${cityName.toLowerCase()}`,
+      `${config.slug} ${cityName.toLowerCase()}`,
+      `immobilier ${cityName.toLowerCase()}`,
+      `${cityName.toLowerCase()} Hesperange`,
+      'immobilier Luxembourg',
+    ],
+    openGraph: {
+      type: 'website',
+      url: `${siteConfig.url}${url}`,
+      title: `${title} — Fidelis Hesperange`,
+      description,
+      images: [
+        {
+          url: `${siteConfig.url}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${title} — Fidelis Hesperange`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} — Fidelis Hesperange`,
+      description,
+      images: [`${siteConfig.url}/opengraph-image`],
+    },
+    alternates: {
+      canonical: url,
     },
   }
 }

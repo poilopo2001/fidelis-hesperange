@@ -544,9 +544,9 @@ export default function Footer() {
 
             {/* Newsletter mobile (toujours visible) */}
             <div className="mt-8">
-              <h3 className="mb-4 text-caption font-medium uppercase tracking-[0.2em] text-ink">
+              <p className="mb-4 text-caption font-medium uppercase tracking-[0.2em] text-ink">
                 Newsletter
-              </h3>
+              </p>
               <p className="mb-4 text-body-sm text-stone">
                 Recevez notre sélection hebdomadaire de biens.
               </p>

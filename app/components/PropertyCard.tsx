@@ -8,9 +8,10 @@ import type { Property } from '../data/properties'
 interface PropertyCardProps {
   property: Property
   index?: number
+  headingLevel?: 'h2' | 'h3'
 }
 
-export default function PropertyCard({ property, index = 0 }: PropertyCardProps) {
+export default function PropertyCard({ property, index = 0, headingLevel = 'h2' }: PropertyCardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
@@ -73,9 +74,15 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
           </div>
 
           {/* Title */}
-          <h3 className="font-serif text-xl lg:text-2xl text-ink group-hover:text-brick transition-colors duration-300 leading-tight mb-3">
-            {property.title}
-          </h3>
+          {headingLevel === 'h2' ? (
+            <h2 className="font-serif text-xl lg:text-2xl text-ink group-hover:text-brick transition-colors duration-300 leading-tight mb-3">
+              {property.title}
+            </h2>
+          ) : (
+            <h3 className="font-serif text-xl lg:text-2xl text-ink group-hover:text-brick transition-colors duration-300 leading-tight mb-3">
+              {property.title}
+            </h3>
+          )}
 
           {/* Features */}
           <div className="flex items-center gap-4 text-caption text-stone mb-4">

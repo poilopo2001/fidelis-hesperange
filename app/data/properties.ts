@@ -1,5 +1,7 @@
 // Données des biens immobiliers
 
+import { getPropertyTypeBySlug, isParentType } from './propertyTypes'
+
 export interface Property {
   id: string
   slug: string
@@ -17,6 +19,8 @@ export interface Property {
   features: string[]
   images: string[]
   isFeatured?: boolean
+  propertyCategory: 'appartement' | 'maison'
+  propertySubType: string
 }
 
 // Sections de la commune Hesperange
@@ -50,6 +54,8 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     ],
     isFeatured: true,
+    propertyCategory: 'maison',
+    propertySubType: 'villa',
   },
   {
     id: '2',
@@ -69,6 +75,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'maison-individuelle',
   },
   {
     id: '3',
@@ -88,6 +96,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'penthouse',
   },
 
   // ===== ACHAT - ALZINGEN =====
@@ -110,6 +120,8 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80',
     ],
     isFeatured: true,
+    propertyCategory: 'maison',
+    propertySubType: 'ferme',
   },
   {
     id: '5',
@@ -129,6 +141,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'maison-individuelle',
   },
 
   // ===== ACHAT - FENTANGE =====
@@ -150,6 +164,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'plain-pied',
   },
   {
     id: '7',
@@ -169,6 +185,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'duplex',
   },
 
   // ===== ACHAT - ITZIG =====
@@ -190,6 +208,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'maison-mitoyenne',
   },
   {
     id: '9',
@@ -209,6 +229,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'rez-de-chaussee',
   },
 
   // ===== ACHAT - HOWALD =====
@@ -231,6 +253,8 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
     ],
     isFeatured: true,
+    propertyCategory: 'maison',
+    propertySubType: 'maison-individuelle',
   },
   {
     id: '11',
@@ -250,6 +274,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'studio',
   },
 
   // ===== LOCATION - HESPERANGE (chef-lieu) =====
@@ -271,6 +297,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'rez-de-chaussee',
   },
   {
     id: '13',
@@ -290,6 +318,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'maison-mitoyenne',
   },
 
   // ===== LOCATION - ALZINGEN =====
@@ -311,6 +341,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'maison-individuelle',
   },
 
   // ===== LOCATION - FENTANGE =====
@@ -332,6 +364,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'mansarde',
   },
 
   // ===== LOCATION - ITZIG =====
@@ -353,6 +387,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'studio',
   },
   {
     id: '17',
@@ -372,6 +408,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'duplex',
   },
 
   // ===== LOCATION - HOWALD =====
@@ -393,6 +431,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'rez-de-chaussee',
   },
   {
     id: '19',
@@ -412,6 +452,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
     ],
+    propertyCategory: 'maison',
+    propertySubType: 'maison-individuelle',
   },
 
   // ===== AUTRES VILLES (hors Hesperange) =====
@@ -434,6 +476,8 @@ export const properties: Property[] = [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80',
     ],
     isFeatured: true,
+    propertyCategory: 'maison',
+    propertySubType: 'villa',
   },
   {
     id: '21',
@@ -453,6 +497,8 @@ export const properties: Property[] = [
     images: [
       'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80',
     ],
+    propertyCategory: 'appartement',
+    propertySubType: 'penthouse',
   },
 ]
 
@@ -495,4 +541,36 @@ export function getCitiesByType(type: 'achat' | 'location'): string[] {
 
 export function getSectionInfo(sectionId: string) {
   return hesperangeSections.find(s => s.id.toLowerCase() === sectionId.toLowerCase())
+}
+
+// Filtre par type de bien (parent = agregation de tous les sous-types de la categorie)
+export function getPropertiesByTransactionAndPropertyType(
+  transaction: 'achat' | 'location',
+  propertyTypeSlug: string
+): Property[] {
+  const config = getPropertyTypeBySlug(propertyTypeSlug)
+  if (!config) return []
+
+  // Only Hesperange commune properties
+  const hesperangeProps = properties.filter(
+    p => p.type === transaction && p.city.toLowerCase() === 'hesperange'
+  )
+
+  if (isParentType(propertyTypeSlug)) {
+    // Parent type (appartements/maisons): aggregate all sub-types of same category
+    return hesperangeProps.filter(p => p.propertyCategory === config.category)
+  }
+
+  // Specific sub-type
+  return hesperangeProps.filter(p => p.propertySubType === propertyTypeSlug)
+}
+
+// Filtre par type de bien + section/ville
+export function getPropertiesByTransactionPropertyTypeAndSection(
+  transaction: 'achat' | 'location',
+  propertyTypeSlug: string,
+  section: string
+): Property[] {
+  const allOfType = getPropertiesByTransactionAndPropertyType(transaction, propertyTypeSlug)
+  return allOfType.filter(p => p.section.toLowerCase() === section.toLowerCase())
 }

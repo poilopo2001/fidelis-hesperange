@@ -4,6 +4,8 @@ import CityInfo from '../../components/CityInfo'
 import JsonLd from '../../components/JsonLd'
 import EditorialNav from '../../components/EditorialNav'
 import Footer from '../../sections/Footer'
+import PropertyTypeGrid from '../../components/PropertyTypeGrid'
+import { getParentTypes } from '../../data/propertyTypes'
 import { getPropertiesByTypeAndSection } from '../../data/properties'
 import { getCityData } from '../../data/cityData'
 import { generateCityMetadata } from '../../lib/seo/metadata'
@@ -61,9 +63,16 @@ export default async function AchatHowaldPage() {
           properties={properties}
           title={cityData ? `Biens à vendre à ${cityData.localite}` : 'Biens à vendre à Howald'}
           subtitle={cityData?.immobilier.atouts || 'Découvrez les biens en vente à Howald'}
+          headingLevel="h1"
         />
         
         {cityData && <CityInfo cityData={cityData} type="achat" />}
+
+        <section className="bg-cream border-b border-stone/10">
+          <div className="section-editorial py-12">
+            <PropertyTypeGrid types={getParentTypes()} basePath="/achat" city="howald" />
+          </div>
+        </section>
       </main>
       <Footer />
     </>

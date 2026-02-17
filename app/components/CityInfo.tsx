@@ -35,9 +35,9 @@ export default function CityInfo({ cityData, type }: CityInfoProps) {
         {/* Header avec nom et prix */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
           <div className="lg:col-span-2">
-            <h1 className="font-serif text-display-lg text-ink mb-4">
+            <h2 className="font-serif text-display-lg text-ink mb-4">
               {type === 'achat' ? 'Acheter' : 'Louer'} à {cityData.localite}
-            </h1>
+            </h2>
             <p className="text-editorial text-stone max-w-2xl">
               {cityData.demographique.note || `Découvrez les biens ${type === 'achat' ? 'en vente' : 'en location'} à ${cityData.localite}, section de la commune de Hesperange.`}
             </p>
@@ -142,10 +142,10 @@ export default function CityInfo({ cityData, type }: CityInfoProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h2 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
+          <h3 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
             <Star className="w-5 h-5 text-brick" />
             Pourquoi choisir {cityData.localite} ?
-          </h2>
+          </h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {cityData.points_forts.slice(0, 6).map((point, index) => (
               <li key={index} className="flex items-start gap-2 text-body text-stone">
@@ -164,10 +164,10 @@ export default function CityInfo({ cityData, type }: CityInfoProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.35 }}
           >
-            <h2 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
+            <h3 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
               <Bus className="w-5 h-5 text-brick" />
               Transports
-            </h2>
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {cityData.transports.tram?.ligne && (
                 <div className="flex items-center gap-3 p-3 bg-cream-dark/30">
@@ -229,10 +229,10 @@ export default function CityInfo({ cityData, type }: CityInfoProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <h2 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
+            <h3 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
               <GraduationCap className="w-5 h-5 text-brick" />
               Éducation
-            </h2>
+            </h3>
             <div className="space-y-3">
               {cityData.education.ecoles_fondamentales.map((ecole, index) => (
                 <div key={index} className="p-3 bg-cream-dark/30">
@@ -262,10 +262,10 @@ export default function CityInfo({ cityData, type }: CityInfoProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
           >
-            <h2 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
+            <h3 className="font-serif text-xl text-ink mb-4 flex items-center gap-2">
               <Store className="w-5 h-5 text-brick" />
               Commerces & Services
-            </h2>
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {cityData.commerces_services.supermarches && cityData.commerces_services.supermarches.length > 0 && (
                 <div>

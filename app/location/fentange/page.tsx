@@ -4,6 +4,8 @@ import CityInfo from '../../components/CityInfo'
 import JsonLd from '../../components/JsonLd'
 import EditorialNav from '../../components/EditorialNav'
 import Footer from '../../sections/Footer'
+import PropertyTypeGrid from '../../components/PropertyTypeGrid'
+import { getParentTypes } from '../../data/propertyTypes'
 import { getPropertiesByTypeAndSection } from '../../data/properties'
 import { getCityData } from '../../data/cityData'
 import { generateCityMetadata } from '../../lib/seo/metadata'
@@ -61,9 +63,16 @@ export default async function LocationFentangePage() {
           properties={properties}
           title={cityData ? `Biens à louer à ${cityData.localite}` : 'Biens à louer à Fentange'}
           subtitle={cityData?.immobilier.atouts || 'Découvrez les biens en location à Fentange'}
+          headingLevel="h1"
         />
         
         {cityData && <CityInfo cityData={cityData} type="location" />}
+
+        <section className="bg-cream border-b border-stone/10">
+          <div className="section-editorial py-12">
+            <PropertyTypeGrid types={getParentTypes()} basePath="/location" city="fentange" />
+          </div>
+        </section>
       </main>
       <Footer />
     </>

@@ -1,6 +1,7 @@
 // Schémas JSON-LD pour le référencement
 
 import type { Property } from '../../data/properties'
+import type { PropertyTypeConfig } from '../../data/propertyTypes'
 
 interface SchemaProps {
   url: string
@@ -253,6 +254,44 @@ export function generateFAQPageSchema(faqs: { question: string; answer: string }
         text: faq.answer,
       },
     })),
+  }
+}
+
+// CollectionPage pour les pages type de bien
+export function generatePropertyTypeListingSchema(
+  transaction: 'achat' | 'location',
+  config: PropertyTypeConfig,
+  url: string,
+  propertyCount: number,
+  cityName?: string
+): Record<string, unknown> {
+  const location = cityName || 'Hesperange'
+  const action = transaction === 'achat' ? 'à vendre' : 'à louer'
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `https://fidelis.lu${url}`,
+    url: `https://fidelis.lu${url}`,
+    name: `${config.label} ${action} à ${location}`,
+    description: config.description,
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': 'https://fidelis.lu',
+    },
+    about: {
+      '@type': 'ItemList',
+      numberOfItems: propertyCount,
+      itemListElement: [],
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://fidelis.lu/' },
+        { '@type': 'ListItem', position: 2, name: transaction === 'achat' ? 'Achat' : 'Location', item: `https://fidelis.lu/${transaction}` },
+        { '@type': 'ListItem', position: 3, name: config.label, item: `https://fidelis.lu/${transaction}/${config.slug}` },
+        ...(cityName ? [{ '@type': 'ListItem', position: 4, name: cityName, item: `https://fidelis.lu${url}` }] : []),
+      ],
+    },
   }
 }
 

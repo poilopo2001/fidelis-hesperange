@@ -1,12 +1,14 @@
 import { Metadata } from 'next'
 import PropertyList from '../../components/PropertyList'
 import SectionGrid from '../../components/SectionGrid'
+import PropertyTypeGrid from '../../components/PropertyTypeGrid'
 import CityInfo from '../../components/CityInfo'
 import JsonLd from '../../components/JsonLd'
 import EditorialNav from '../../components/EditorialNav'
 import Footer from '../../sections/Footer'
 import { getPropertiesByTypeAndCity, hesperangeSections } from '../../data/properties'
 import { getCityData } from '../../data/cityData'
+import { getParentTypes } from '../../data/propertyTypes'
 import { generateHesperangeMetadata } from '../../lib/seo/metadata'
 import {
   generateWebPageSchema,
@@ -55,6 +57,7 @@ export default async function LocationHesperangePage() {
           properties={properties}
           title="Tous les biens à louer"
           subtitle="Maison et appartements en location à Hesperange et ses sections."
+          headingLevel="h1"
         />
         
         {cityData ? (
@@ -86,6 +89,11 @@ export default async function LocationHesperangePage() {
             </div>
           </section>
         )}
+        <section className="bg-cream border-b border-stone/10">
+          <div className="section-editorial py-12">
+            <PropertyTypeGrid types={getParentTypes()} basePath="/location" city="hesperange" />
+          </div>
+        </section>
       </main>
       <Footer />
     </>
