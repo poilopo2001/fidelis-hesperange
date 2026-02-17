@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { properties, hesperangeSections } from './data/properties'
 import { PROPERTY_TYPE_SLUGS, HESPERANGE_CITY_SLUGS } from './data/propertyTypes'
+import { getAllArticles } from './data/articles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.fidelis.lu'
@@ -97,5 +98,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...sectionPages, ...propertyTypePages, ...propertyTypeCityPages, ...propertyPages]
+  // Page listing des articles
+  const conseilsPage = {
+    url: `${baseUrl}/conseils`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }
+
+  // Pages articles individuels
+  const articlePages = getAllArticles().map((article) => ({
+    url: `${baseUrl}/conseils/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticPages, ...sectionPages, ...propertyTypePages, ...propertyTypeCityPages, ...propertyPages, conseilsPage, ...articlePages]
 }
