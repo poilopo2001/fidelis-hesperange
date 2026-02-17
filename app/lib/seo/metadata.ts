@@ -6,7 +6,7 @@ import type { PropertyTypeConfig } from '../../data/propertyTypes'
 
 const siteConfig = {
   name: 'Fidelis Hesperange',
-  url: 'https://fidelis.lu',
+  url: 'https://www.fidelis.lu',
   logo: '/images/logo.png',
   defaultImage: '/images/og-default.jpg',
 }

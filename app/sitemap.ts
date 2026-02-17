@@ -3,7 +3,7 @@ import { properties, hesperangeSections } from './data/properties'
 import { PROPERTY_TYPE_SLUGS, HESPERANGE_CITY_SLUGS } from './data/propertyTypes'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://fidelis.lu'
+  const baseUrl = 'https://www.fidelis.lu'
 
   // Pages statiques principales
   const staticPages = [

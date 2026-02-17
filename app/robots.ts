@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/', '/_next/', '/private/'],
     },
-    sitemap: 'https://fidelis.lu/sitemap.xml',
-    host: 'https://fidelis.lu',
+    sitemap: 'https://www.fidelis.lu/sitemap.xml',
+    host: 'https://www.fidelis.lu',
   }
 }

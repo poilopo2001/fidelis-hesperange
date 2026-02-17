@@ -19,7 +19,7 @@ import {
 } from './lib/seo/schemas'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fidelis.lu'),
+  metadataBase: new URL('https://www.fidelis.lu'),
   title: 'Fidelis Hesperange — Agence immobilière de luxe',
   description: 'Agence immobilière de luxe à Hesperange. Achat et location de biens d\'exception à Hesperange, Alzingen, Fentange, Itzig et Howald.',
   keywords: [
@@ -40,12 +40,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://fidelis.lu',
+    url: 'https://www.fidelis.lu',
     title: 'Fidelis Hesperange — Agence immobilière de luxe',
     description: 'Agence immobilière de luxe à Hesperange. Achat et location de biens d\'exception.',
     images: [
       {
-        url: 'https://fidelis.lu/images/og-default.jpg',
+        url: 'https://www.fidelis.lu/images/og-default.jpg',
         width: 1200,
         height: 630,
         alt: 'Fidelis Hesperange — Immobilier de luxe',

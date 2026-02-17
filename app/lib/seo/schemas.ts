@@ -17,11 +17,11 @@ export function generateWebsiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Fidelis Hesperange',
-    url: 'https://fidelis.lu',
+    url: 'https://www.fidelis.lu',
     description: 'Agence immobilière de luxe à Hesperange. Achat et location de biens d\'exception.',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://fidelis.lu/achat?q={search_term_string}',
+      target: 'https://www.fidelis.lu/achat?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }
@@ -33,9 +33,9 @@ export function generateLocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
     name: 'Fidelis Hesperange',
-    image: 'https://fidelis.lu/images/logo.png',
-    '@id': 'https://fidelis.lu',
-    url: 'https://fidelis.lu',
+    image: 'https://www.fidelis.lu/images/logo.png',
+    '@id': 'https://www.fidelis.lu',
+    url: 'https://www.fidelis.lu',
     telephone: '+35227456789',
     email: 'contact@fidelis.lu',
     address: {
@@ -91,7 +91,7 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `https://fidelis.lu${item.url}`,
+      item: `https://www.fidelis.lu${item.url}`,
     })),
   }
 }
@@ -101,8 +101,8 @@ export function generateRealEstateListingSchema(property: Property, url: string)
   return {
     '@context': 'https://schema.org',
     '@type': 'RealEstateListing',
-    '@id': `https://fidelis.lu/biens/${property.slug}`,
-    url: `https://fidelis.lu${url}`,
+    '@id': `https://www.fidelis.lu/biens/${property.slug}`,
+    url: `https://www.fidelis.lu${url}`,
     name: property.title,
     description: property.description,
     image: property.images,
@@ -135,7 +135,7 @@ export function generateRealEstateListingSchema(property: Property, url: string)
       name: 'Fidelis Hesperange',
       telephone: '+35227456789',
       email: 'contact@fidelis.lu',
-      url: 'https://fidelis.lu',
+      url: 'https://www.fidelis.lu',
     },
     propertyType: property.surface > 150 ? 'House' : 'Apartment',
     offerType: property.type === 'achat' ? 'Sale' : 'Lease',
@@ -148,18 +148,18 @@ export function generateWebPageSchema({ url, title, description, image }: Schema
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    '@id': `https://fidelis.lu${url}`,
-    url: `https://fidelis.lu${url}`,
+    '@id': `https://www.fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     name: title,
     description: description,
-    image: image || 'https://fidelis.lu/images/og-default.jpg',
+    image: image || 'https://www.fidelis.lu/images/og-default.jpg',
     isPartOf: {
       '@type': 'WebSite',
-      '@id': 'https://fidelis.lu',
+      '@id': 'https://www.fidelis.lu',
     },
     about: {
       '@type': 'RealEstateAgent',
-      '@id': 'https://fidelis.lu/#agency',
+      '@id': 'https://www.fidelis.lu/#agency',
     },
   }
 }
@@ -174,10 +174,10 @@ export function generatePlaceSchema(
   const baseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Place',
-    '@id': `https://fidelis.lu${url}`,
+    '@id': `https://www.fidelis.lu${url}`,
     name: name,
     description: description,
-    url: `https://fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: name,
@@ -224,19 +224,19 @@ export function generateArticleSchema(
     author: {
       '@type': 'Organization',
       name: 'Fidelis Hesperange',
-      url: 'https://fidelis.lu',
+      url: 'https://www.fidelis.lu',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Fidelis Hesperange',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://fidelis.lu/images/logo.png',
+        url: 'https://www.fidelis.lu/images/logo.png',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://fidelis.lu${url}`,
+      '@id': `https://www.fidelis.lu${url}`,
     },
   }
 }
@@ -270,13 +270,13 @@ export function generatePropertyTypeListingSchema(
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    '@id': `https://fidelis.lu${url}`,
-    url: `https://fidelis.lu${url}`,
+    '@id': `https://www.fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     name: `${config.label} ${action} à ${location}`,
     description: config.description,
     isPartOf: {
       '@type': 'WebSite',
-      '@id': 'https://fidelis.lu',
+      '@id': 'https://www.fidelis.lu',
     },
     about: {
       '@type': 'ItemList',
@@ -286,10 +286,10 @@ export function generatePropertyTypeListingSchema(
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://fidelis.lu/' },
-        { '@type': 'ListItem', position: 2, name: transaction === 'achat' ? 'Achat' : 'Location', item: `https://fidelis.lu/${transaction}` },
-        { '@type': 'ListItem', position: 3, name: config.label, item: `https://fidelis.lu/${transaction}/${config.slug}` },
-        ...(cityName ? [{ '@type': 'ListItem', position: 4, name: cityName, item: `https://fidelis.lu${url}` }] : []),
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://www.fidelis.lu/' },
+        { '@type': 'ListItem', position: 2, name: transaction === 'achat' ? 'Achat' : 'Location', item: `https://www.fidelis.lu/${transaction}` },
+        { '@type': 'ListItem', position: 3, name: config.label, item: `https://www.fidelis.lu/${transaction}/${config.slug}` },
+        ...(cityName ? [{ '@type': 'ListItem', position: 4, name: cityName, item: `https://www.fidelis.lu${url}` }] : []),
       ],
     },
   }
@@ -308,11 +308,11 @@ export function generateServiceSchema(
     serviceType: name,
     name: name,
     description: description,
-    url: `https://fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     provider: {
       '@type': 'RealEstateAgent',
       name: 'Fidelis Hesperange',
-      url: 'https://fidelis.lu',
+      url: 'https://www.fidelis.lu',
     },
     areaServed: areaServed
       ? {

@@ -18,7 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fidelis.lu'),
+  metadataBase: new URL('https://www.fidelis.lu'),
   title: {
     default: 'Fidelis Hesperange — Immobilier de charme',
     template: '%s — Fidelis Hesperange',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_LU',
-    url: 'https://fidelis.lu',
+    url: 'https://www.fidelis.lu',
     siteName: 'Fidelis Hesperange',
     title: 'Fidelis Hesperange — Immobilier de charme',
     description: 'Votre agence immobilière de luxe à Hesperange. Biens d\'exception entre le lac et la capitale.',

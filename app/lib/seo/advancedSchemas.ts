@@ -12,8 +12,8 @@ export function generateAdvancedRealEstateListingSchema(
   const baseSchema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateListing',
-    '@id': `https://fidelis.lu/biens/${property.slug}`,
-    url: `https://fidelis.lu${url}`,
+    '@id': `https://www.fidelis.lu/biens/${property.slug}`,
+    url: `https://www.fidelis.lu${url}`,
     name: property.title,
     description: property.description,
     image: property.images,
@@ -71,7 +71,7 @@ export function generateAdvancedRealEstateListingSchema(
       name: 'Fidelis Hesperange',
       telephone: '+35227456789',
       email: 'contact@fidelis.lu',
-      url: 'https://fidelis.lu',
+      url: 'https://www.fidelis.lu',
       address: {
         '@type': 'PostalAddress',
         streetAddress: '45, Rue de Luxembourg',
@@ -150,11 +150,11 @@ export function generateAdvancedCitySchema(cityData: CityData, url: string) {
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': cityData.chef_lieu ? 'City' : 'Place',
-    '@id': `https://fidelis.lu${url}`,
+    '@id': `https://www.fidelis.lu${url}`,
     name: cityData.localite,
     alternateName: cityData.nom_luxembourgeois,
     description: cityData.demographique.note || `${cityData.localite}, section de la commune de Hesperange`,
-    url: `https://fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     
     // Adresse
     address: {
@@ -222,7 +222,7 @@ export function generateCityRealEstateDatasetSchema(cityData: CityData, url: str
     '@type': 'Dataset',
     name: `Données immobilières — ${cityData.localite}`,
     description: `Prix et tendances du marché immobilier à ${cityData.localite}`,
-    url: `https://fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     creator: {
       '@type': 'RealEstateAgent',
       name: 'Fidelis Hesperange',
@@ -231,7 +231,7 @@ export function generateCityRealEstateDatasetSchema(cityData: CityData, url: str
     license: 'https://creativecommons.org/licenses/by-nc/4.0/',
     distribution: {
       '@type': 'DataDownload',
-      contentUrl: `https://fidelis.lu${url}`,
+      contentUrl: `https://www.fidelis.lu${url}`,
       encodingFormat: 'text/html',
     },
     variableMeasured: [
@@ -307,11 +307,11 @@ export function generateLocalServiceSchema(
     serviceType: serviceType === 'achat' ? 'RealEstatePurchase' : 'RealEstateRental',
     name: `${serviceType === 'achat' ? 'Achat' : 'Location'} immobilière à ${cityData.localite}`,
     description: `Agence immobilière spécialisée dans l'${serviceType === 'achat' ? 'achat' : 'location'} de biens à ${cityData.localite}. Prix moyen : ${cityData.immobilier.prix_moyen_m2_vente.toLocaleString('fr-FR')} €/m².`,
-    url: `https://fidelis.lu${url}`,
+    url: `https://www.fidelis.lu${url}`,
     provider: {
       '@type': 'RealEstateAgent',
       name: 'Fidelis Hesperange',
-      url: 'https://fidelis.lu',
+      url: 'https://www.fidelis.lu',
     },
     areaServed: {
       '@type': 'Place',
