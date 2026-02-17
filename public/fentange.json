@@ -1,0 +1,152 @@
+{
+  "localite": "Fentange",
+  "nom_luxembourgeois": "Fenteng",
+  "commune": "Hesperange",
+  "code_postal": "L-5765",
+  "chef_lieu": false,
+
+  "demographique": {
+    "population": 2675,
+    "annee_reference": 2025,
+    "evolution": {
+      "note": "Croissance résidentielle soutenue, quartier en expansion avec de nouvelles constructions"
+    }
+  },
+
+  "transports": {
+    "bus": {
+      "lignes_principales": ["RGTR", "TICE"],
+      "operateurs": ["RGTR", "TICE"],
+      "note": "Desserte par bus régionaux"
+    },
+    "tram": {
+      "ligne": null,
+      "connexion": "Via Howald (tram T1)",
+      "note": "Proximité du terminus Stade de Luxembourg (Cloche d'Or)"
+    },
+    "train": {
+      "gare_proche": "Gare de Howald",
+      "distance_km": 4
+    },
+    "citybus": {
+      "hesper_citybus": true,
+      "flexibus": true
+    },
+    "acces_autoroute": {
+      "A3": "Accès rapide",
+      "A6": "Via Cloche d'Or",
+      "note": "Proximité immédiate du quartier Cloche d'Or"
+    },
+    "distances": {
+      "luxembourg_centre": {"voiture_min": 10},
+      "cloche_dor": {"voiture_min": 3, "a_pied_min": 15},
+      "kirchberg": {"voiture_min": 15},
+      "aeroport_findel": {"voiture_min": 18}
+    }
+  },
+
+  "education": {
+    "ecoles_fondamentales": [
+      {
+        "nom": "École fondamentale de Fentange",
+        "cycles": "Cycle 1 à Cycle 4",
+        "services": ["Cantine", "Garderie"],
+        "note": "École avec service de cantine et garderie, permettant aux enfants de rester plus longtemps"
+      }
+    ],
+    "maisons_relais": [
+      {
+        "nom": "Maison Relais Mini-Heesprénger",
+        "note": "Enfants inscrits à l'école de Hesperange ou Fentange (3-6 ans)"
+      },
+      {
+        "nom": "Maison Relais Heesprénger",
+        "note": "Enfants inscrits à l'école de Hesperange ou Fentange (6-12 ans)"
+      }
+    ],
+    "creches": [
+      {
+        "nom": "Crèche Fentange",
+        "type": "Jeunes enfants"
+      }
+    ]
+  },
+
+  "commerces_services": {
+    "zone_activites": {
+      "nom": "Zone d'activités Op de Leemen",
+      "statut": "Nouvelle zone en développement",
+      "note": "Dynamique commerciale croissante, nouvelle zone d'activités économiques"
+    },
+    "centre_commercial_proche": {
+      "nom": "Cloche d'Or Shopping Center",
+      "distance_voiture_min": 3,
+      "distance_a_pied_min": 15,
+      "note": "Proximité immédiate du plus grand centre commercial du Luxembourg"
+    },
+    "restaurants": {
+      "nombre_estime": 3,
+      "note": "Environnement résidentiel, restauration locale"
+    },
+    "note": "Quartier très résidentiel avec de grosses habitations. Cloche d'Or à quelques minutes offre tous les commerces et services."
+  },
+
+  "loisirs_sport": {
+    "parcs": ["Parc communal de Hesperange à proximité"],
+    "caracteristique": "Plateau résidentiel calme avec grandes propriétés",
+    "note": "Environnement très résidentiel, à proximité immédiate des infrastructures de loisirs de la Cloche d'Or"
+  },
+
+  "sante": {
+    "medecins": true,
+    "pharmacies_proximite": "Pharmacies à Hesperange et Howald",
+    "hopital_proche": {
+      "nom": "Centre Hospitalier de Luxembourg (CHL)",
+      "distance_km": 6
+    }
+  },
+
+  "immobilier": {
+    "prix_moyen_m2_vente": 8714,
+    "tendance": "stable",
+    "annee_reference": "décembre 2025",
+    "types_biens_dominants": ["Grandes maisons individuelles", "Duplex", "Appartements familiaux"],
+    "atouts": "Proximité Cloche d'Or, cadre résidentiel premium, grandes parcelles",
+    "note": "Prix les plus accessibles de la commune, mais environnement résidentiel haut de gamme",
+    "source": "Immotop.lu"
+  },
+
+  "administration": {
+    "rattachement": "Administration communale de Hesperange",
+    "adresse_mairie": "474, route de Thionville, L-5886 Hesperange"
+  },
+
+  "accessibilite_score": {
+    "transports": 3,
+    "commerces_a_pied": 2,
+    "ecoles_proximite": 4,
+    "espaces_verts": 4,
+    "sur_5": true,
+    "note": "Quartier résidentiel calme, Cloche d'Or à portée de main"
+  },
+
+  "points_forts": [
+    "Proximité immédiate de la Cloche d'Or (3 min en voiture)",
+    "Environnement résidentiel premium avec grandes propriétés",
+    "École fondamentale avec cantine et garderie",
+    "Nouvelle zone d'activités Op de Leemen",
+    "Prix au m² les plus accessibles de la commune",
+    "Cadre calme et verdoyant sur le plateau",
+    "Accès rapide aux autoroutes A3 et A6",
+    "Idéal pour les familles recherchant calme et proximité urbaine"
+  ],
+
+  "sources": [
+    "hesperange.lu",
+    "immotop.lu",
+    "justarrived.lu",
+    "mapcarta.com"
+  ],
+
+  "derniere_mise_a_jour": "2025-02"
+}

@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Fidelis — Editorial Premium Design System
+   ============================================================ */
+
+@layer base {
+  :root {
+    /* Editorial Color Palette */
+    --color-cream: #faf9f6;
+    --color-cream-dark: #f5f3ef;
+    --color-ink: #1a1a1a;
+    --color-ink-light: #2d2d2d;
+    --color-brick: #c44536;
+    --color-brick-dark: #a33a2e;
+    --color-brick-light: #d45a4b;
+    --color-stone: #8a8a8a;
+    --color-stone-light: #b5b5b5;
+    --color-stone-dark: #5a5a5a;
+    
+    /* Animation Timing */
+    --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+    
+    /* Layout */
+    --nav-height: 80px;
+    --section-gap: clamp(6rem, 12vw, 10rem);
+  }
+
+  * {
+    @apply border-stone/20;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-family: var(--font-inter), Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Editorial Typography Hierarchy */
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    @apply bg-brick/20 text-ink;
+  }
+}
+
+@layer components {
+  /* Editorial Badge */
+  .editorial-badge {
+    @apply inline-flex items-center gap-3 text-caption uppercase tracking-widest text-brick font-medium;
+  }
+
+  .editorial-badge::before {
+    content: '';
+    @apply w-6 h-px bg-brick;
+  }
+
+  /* Editorial Rule */
+  .editorial-rule {
+    @apply w-16 h-px bg-brick;
+  }
+
+  /* Magazine Grid */
+  .magazine-grid {
+    @apply grid gap-6;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* Editorial Card */
+  .editorial-card {
+    @apply bg-white border border-stone/10 transition-all duration-500 ease-editorial;
+  }
+
+  .editorial-card:hover {
+    @apply shadow-2xl shadow-ink/5 -translate-y-1;
+  }
+
+  /* Pull Quote */
+  .pull-quote {
+    @apply font-serif text-display-sm text-ink relative pl-8 border-l-2 border-brick;
+  }
+
+  /* Image Caption */
+  .image-caption {
+    @apply text-caption uppercase tracking-widest text-stone mt-3;
+  }
+
+  /* Editorial Link */
+  .editorial-link {
+    @apply relative inline-block text-ink font-medium;
+  }
+
+  .editorial-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-ink origin-left transition-transform duration-300 ease-editorial;
+  }
+
+  .editorial-link:hover::after {
+    @apply origin-right scale-x-0;
+  }
+
+  /* CTA Button Primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-ink text-cream text-body-sm font-medium uppercase tracking-widest transition-all duration-300 ease-editorial;
+  }
+
+  .btn-primary:hover {
+    @apply bg-brick;
+  }
+
+  /* CTA Button Outline */
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-ink text-ink text-body-sm font-medium uppercase tracking-widest transition-all duration-300 ease-editorial;
+  }
+
+  .btn-outline:hover {
+    @apply bg-ink text-cream;
+  }
+
+  /* Section Container */
+  .section-editorial {
+    @apply px-6 md:px-12 lg:px-20 xl:px-30;
+  }
+
+  /* Reading Container */
+  .reading-container {
+    @apply max-w-3xl mx-auto;
+  }
+}
+
+@layer utilities {
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Hide Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Editorial Spacing */
+  .editorial-py {
+    @apply py-20 md:py-30 lg:py-38;
+  }
+
+  /* Clip Path Utilities */
+  .clip-reveal {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .clip-hidden {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

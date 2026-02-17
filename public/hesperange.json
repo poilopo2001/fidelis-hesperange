@@ -1,0 +1,233 @@
+{
+  "localite": "Hesperange",
+  "nom_luxembourgeois": "Hesper",
+  "commune": "Hesperange",
+  "code_postal": "L-5810 / L-5886 / L-5887 / L-5893",
+  "chef_lieu": true,
+
+  "demographique": {
+    "population": 2914,
+    "annee_reference": 2024,
+    "evolution": {
+      "1880": 2300,
+      "1955": 3500,
+      "1992": 10000,
+      "2024": 2914
+    },
+    "nationalites": "Plus de 129 nationalités représentées",
+    "pourcentage_etrangers": 54,
+    "densite_commune_hab_km2": 629,
+    "surface_commune_ha": 2722,
+    "population_commune_totale": 17119,
+    "annee_commune": 2024,
+    "note": "Chef-lieu de la commune. Population doublée en 30 ans à l'échelle communale."
+  },
+
+  "transports": {
+    "bus": {
+      "lignes_principales": ["3", "4", "5", "23", "24", "28", "29"],
+      "operateurs": ["AVL (Ville de Luxembourg)", "RGTR", "TICE"],
+      "note": "Transports publics gratuits depuis 2020"
+    },
+    "tram": {
+      "ligne": null,
+      "note": "Pas de desserte directe par le tram, mais connexion via Howald (T1)"
+    },
+    "train": {
+      "gare_proche": "Gare de Howald",
+      "distance_gare": "3 km",
+      "lignes": ["RB", "RE", "TER"],
+      "destinations": "Luxembourg, Bettembourg, Esch-sur-Alzette"
+    },
+    "citybus": {
+      "hesper_citybus": true,
+      "flexibus": true,
+      "note": "Service Flexibus sur réservation, desserte porte-à-porte dans la commune"
+    },
+    "veloh": {
+      "stations": true,
+      "nombre_stations": 4,
+      "note": "4 stations Vel'oH! sur la commune"
+    },
+    "acces_autoroute": {
+      "A1": "Accès direct",
+      "A3": "Échangeur Hesperange (direction Dudelange/France)",
+      "note": "Accès rapide vers la France (15,6 km frontière), Allemagne et Belgique"
+    },
+    "distances": {
+      "luxembourg_centre": {"voiture_min": 8, "bus_min": 15},
+      "cloche_dor": {"voiture_min": 5, "bus_min": 10},
+      "kirchberg": {"voiture_min": 15, "bus_min": 25},
+      "aeroport_findel": {"voiture_min": 15, "bus_min": 30},
+      "belval": {"voiture_min": 25, "bus_min": 40},
+      "gare_thionville": {"voiture_min": 25}
+    }
+  },
+
+  "education": {
+    "ecoles_fondamentales": [
+      {
+        "nom": "École fondamentale de Hesperange",
+        "cycles": "Cycle 1 à Cycle 4",
+        "note": "Gratuite pour les résidents de la commune"
+      }
+    ],
+    "maisons_relais": [
+      {
+        "nom": "Maison Relais Mini-Heesprénger",
+        "ages": "3-6 ans",
+        "cycles": "Précoce et Cycle 1",
+        "note": "Pour les enfants inscrits à l'école fondamentale de Hesperange ou Fentange"
+      },
+      {
+        "nom": "Maison Relais Heesprénger",
+        "ages": "6-12 ans",
+        "cycles": "Cycle 2.1 à Cycle 4.2",
+        "note": "Pour les enfants inscrits à l'école fondamentale de Hesperange ou Fentange"
+      }
+    ],
+    "creches": [
+      {
+        "nom": "De Jangeli",
+        "adresse": "395, route de Thionville, L-5887 Hesperange",
+        "type": "Jeunes enfants"
+      },
+      {
+        "nom": "The Happy Few",
+        "adresse": "3, rue Dr. Théodore Urbain, L-5893 Hesperange",
+        "type": "Jeunes enfants"
+      },
+      {
+        "nom": "La Luciole 9",
+        "adresse": "33, rue de Gasperich, L-5826 Hesperange",
+        "type": "Enfants scolarisés"
+      }
+    ],
+    "ecole_musique": {
+      "existe": true,
+      "eleves": 400,
+      "branches": 30,
+      "note": "Cours individuels et collectifs"
+    },
+    "lycees_proximite": ["Lycée Vauban (Gasperich)", "Lycée de Bonnevoie"],
+    "cheque_service_accueil": true,
+    "note": "Enseignement multilingue : luxembourgeois, allemand, français dès le Cycle 2"
+  },
+
+  "commerces_services": {
+    "supermarches": ["Commerces de proximité dans le centre"],
+    "centre_commercial_proche": {
+      "nom": "Cloche d'Or Shopping Center",
+      "distance_voiture_min": 5,
+      "distance_velo_min": 10
+    },
+    "banques": ["AXA (agent d'assurance)"],
+    "pharmacies": ["Pharmacie à proximité"],
+    "poste": true,
+    "boulangeries": true,
+    "restaurants": {
+      "nombre_estime": 10,
+      "cuisines": ["Française", "Portugaise", "Italienne", "Chinoise"],
+      "note": "Plusieurs restaurants autour de l'administration communale"
+    },
+    "note": "Mélange de commerces de proximité et de zones commerciales. Le centre commercial Cloche d'Or est à quelques minutes."
+  },
+
+  "loisirs_sport": {
+    "equipements": [
+      "Stade Alphonse Theis (capacité 3 058 places, FC Swift Hesperange)",
+      "Terrains de football et basketball",
+      "Hall de sport",
+      "Terrain de beach-volley",
+      "Terrain de pétanque",
+      "Piste de cyclocross",
+      "Skatepark",
+      "YOYO (parc d'amusement intérieur)"
+    ],
+    "parcs": [
+      {
+        "nom": "Hesper Park",
+        "description": "Parc communal avec mémorial commémorant 3 soldats américains (26 décembre 1944, Bataille des Ardennes)"
+      }
+    ],
+    "clubs_sportifs": ["FC Swift Hesperange"],
+    "patrimoine": [
+      {
+        "nom": "Ruines du Château de Hesperange",
+        "epoque": "XIIIe siècle",
+        "description": "Ancien château fort érigé par les Seigneurs de Rodemack, en surplomb de la ville"
+      },
+      {
+        "nom": "Pont haubané Victor Bodson",
+        "annee": 1994,
+        "description": "Pont emblématique du contournement Est"
+      }
+    ]
+  },
+
+  "sante": {
+    "medecins": true,
+    "dentistes": true,
+    "pharmacies": true,
+    "hopital_proche": {
+      "nom": "Centre Hospitalier de Luxembourg (CHL)",
+      "distance_km": 6
+    }
+  },
+
+  "immobilier": {
+    "prix_moyen_m2_vente": 9066,
+    "prix_moyen_m2_location_mois": 25.70,
+    "tendance": "stable",
+    "variation_annuelle_pourcent": 0.41,
+    "annee_reference": 2025,
+    "types_biens_dominants": ["Maisons individuelles", "Maisons jumelées", "Appartements en résidence"],
+    "atouts": "Proximité Luxembourg-Ville, cadre verdoyant, ruines du château, Hesper Park",
+    "source": "Immotop.lu"
+  },
+
+  "administration": {
+    "mairie": {
+      "adresse": "474, route de Thionville, L-5886 Hesperange",
+      "telephone": "+352 36 08 08 1",
+      "email": "info@hesperange.lu",
+      "horaires": "Lundi-vendredi 07:45-11:45 et 13:30-17:00 (mercredi jusqu'à 18:00)",
+      "site_web": "https://www.hesperange.lu"
+    },
+    "bourgmestre": {
+      "nom": "Diane Adehm",
+      "parti": "CSV",
+      "mandat": "2023-2029"
+    }
+  },
+
+  "accessibilite_score": {
+    "transports": 4,
+    "commerces_a_pied": 3,
+    "ecoles_proximite": 5,
+    "espaces_verts": 5,
+    "sur_5": true,
+    "note": "Cadre de vie entre ville et nature, excellent pour les familles"
+  },
+
+  "points_forts": [
+    "Chef-lieu de la commune avec tous les services administratifs",
+    "Ruines du château médiéval (XIIIe siècle)",
+    "Hesper Park avec mémorial historique",
+    "Proximité immédiate de Luxembourg-Ville (8 min en voiture)",
+    "Plus de 400 élèves à l'école de musique",
+    "Infrastructures sportives complètes (YOYO, stade, etc.)",
+    "Accès rapide autoroutes A1 et A3",
+    "Cadre verdoyant entre zone urbaine et agricole"
+  ],
+
+  "sources": [
+    "hesperange.lu",
+    "syvicol.lu",
+    "immotop.lu",
+    "justarrived.lu",
+    "Wikipedia Hesperange"
+  ],
+
+  "derniere_mise_a_jour": "2025-02"
+}

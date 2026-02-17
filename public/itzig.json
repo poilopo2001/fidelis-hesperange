@@ -1,0 +1,168 @@
+{
+  "localite": "Itzig",
+  "nom_luxembourgeois": "Izeg",
+  "commune": "Hesperange",
+  "code_postal": "L-5765",
+  "chef_lieu": false,
+
+  "demographique": {
+    "population": 2500,
+    "annee_reference": 2025,
+    "evolution": {
+      "note": "Croissance significative depuis les années 1960 grâce à l'aménagement de la Cité Simminger"
+    },
+    "caractere": "Village à caractère campagnard et résidentiel"
+  },
+
+  "transports": {
+    "bus": {
+      "lignes_principales": ["RGTR", "TICE"],
+      "arrets_principaux": ["Hesperange, Itziger Eck"],
+      "operateurs": ["RGTR", "TICE"]
+    },
+    "tram": {
+      "ligne": null,
+      "connexion": "Via Howald (tram T1)"
+    },
+    "train": {
+      "gare_proche": "Gare de Howald",
+      "distance_km": 4
+    },
+    "citybus": {
+      "hesper_citybus": true,
+      "flexibus": true
+    },
+    "acces_autoroute": {
+      "A1": "Accès via pont Victor Bodson",
+      "A3": "Accès via Hesperange",
+      "note": "Le pont haubané Victor Bodson (1994) relie Itzig au réseau autoroutier"
+    },
+    "distances": {
+      "luxembourg_centre": {"voiture_min": 10},
+      "cloche_dor": {"voiture_min": 8},
+      "kirchberg": {"voiture_min": 15},
+      "aeroport_findel": {"voiture_min": 15}
+    }
+  },
+
+  "education": {
+    "ecoles_fondamentales": [
+      {
+        "nom": "École fondamentale d'Itzig",
+        "cycles": "Cycle 1 à Cycle 4",
+        "services": ["Cantine", "Garderie"],
+        "note": "École avec service de cantine et garderie"
+      }
+    ],
+    "maisons_relais": [
+      {
+        "nom": "Maison Relais Itzig",
+        "ages": "3-12 ans"
+      }
+    ],
+    "histoire_scolaire": "Hesperange dépendait historiquement du desservant d'Itzig avant d'être élevée au rang de paroisse en 1849"
+  },
+
+  "commerces_services": {
+    "commerces_notables": [
+      {
+        "nom": "Andy Schleck Cycles",
+        "description": "Magasin de vélo du célèbre coureur cycliste luxembourgeois Andy Schleck",
+        "note": "Lieu emblématique du cyclisme luxembourgeois"
+      }
+    ],
+    "restaurants": {
+      "nombre_estime": 5,
+      "note": "Plusieurs restaurants et magasins dans le village"
+    },
+    "centre_commercial_proche": {
+      "nom": "Cloche d'Or Shopping Center",
+      "distance_voiture_min": 8
+    },
+    "note": "Aspect campagnard et résidentiel, quelques commerces et restaurants de village. Présence emblématique d'Andy Schleck Cycles."
+  },
+
+  "loisirs_sport": {
+    "patrimoine": [
+      {
+        "nom": "Église Saint-Hubert",
+        "description": "Église historique d'Itzig"
+      },
+      {
+        "nom": "Moulin à eau",
+        "description": "Ancien moulin à eau, témoignage du passé rural"
+      }
+    ],
+    "nature": "Village campagnard avec accès aux sentiers de randonnée et paysages ruraux",
+    "cyclisme": "Lien fort avec le cyclisme grâce à Andy Schleck",
+    "note": "Cadre champêtre idéal pour les amateurs de nature et de cyclisme"
+  },
+
+  "sante": {
+    "medecins": true,
+    "pharmacies_proximite": "Pharmacies à Hesperange",
+    "hopital_proche": {
+      "nom": "Centre Hospitalier de Luxembourg (CHL)",
+      "distance_km": 7
+    }
+  },
+
+  "immobilier": {
+    "prix_moyen_m2_vente": 9075,
+    "tendance": "stable",
+    "annee_reference": 2025,
+    "types_biens_dominants": ["Maisons individuelles", "Résidences intimistes (VEFA)", "Maisons de village"],
+    "atouts": "Cadre campagnard, calme absolu, proximité Luxembourg-Ville",
+    "note": "Excellent rapport cadre de vie / prix, ambiance village préservée",
+    "source": "Immotop.lu / justarrived.lu"
+  },
+
+  "administration": {
+    "rattachement": "Administration communale de Hesperange",
+    "adresse_mairie": "474, route de Thionville, L-5886 Hesperange",
+    "histoire": "Première mention sous le nom Itsich en 1597. Hesperange-Itzig formaient une 'agence' administrative dès 1795."
+  },
+
+  "personnalites": [
+    {
+      "nom": "Andy Schleck",
+      "activite": "Coureur cycliste professionnel, vainqueur Tour de France 2010",
+      "lien": "Magasin de vélo Andy Schleck Cycles à Itzig"
+    },
+    {
+      "nom": "Roger Manderscheid",
+      "activite": "Écrivain luxembourgeois (1933-2010)",
+      "note": "Natif d'Itzig"
+    }
+  ],
+
+  "accessibilite_score": {
+    "transports": 2,
+    "commerces_a_pied": 2,
+    "ecoles_proximite": 4,
+    "espaces_verts": 5,
+    "sur_5": true,
+    "note": "Le plus campagnard des 5 localités, idéal pour qui cherche le calme à 10 min de la ville"
+  },
+
+  "points_forts": [
+    "Cadre campagnard et résidentiel préservé",
+    "Andy Schleck Cycles : magasin du champion cycliste",
+    "Patrimoine historique : Église Saint-Hubert, moulin à eau",
+    "École fondamentale avec cantine et garderie",
+    "À 10 minutes en voiture de Luxembourg-Ville",
+    "Résidences intimistes neuves (VEFA) de qualité",
+    "Roger Manderscheid, écrivain luxembourgeois, natif d'Itzig",
+    "Ambiance village authentique, rare à si proche de la capitale"
+  ],
+
+  "sources": [
+    "hesperange.lu",
+    "immotop.lu",
+    "justarrived.lu",
+    "Wikipedia Itzig",
+    "mapcarta.com"
+  ],
+
+  "derniere_mise_a_jour": "2025-02"
+}

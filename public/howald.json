@@ -1,0 +1,187 @@
+{
+  "localite": "Howald",
+  "nom_luxembourgeois": "Houwald",
+  "commune": "Hesperange",
+  "code_postal": "L-1508 / L-5765 / L-5765",
+  "chef_lieu": false,
+
+  "demographique": {
+    "population": 5200,
+    "annee_reference": 2025,
+    "evolution": {
+      "1885": 21,
+      "1985": 4148,
+      "2006": 4760,
+      "2025": 5200
+    },
+    "note": "Explosion démographique sans précédent : de 21 habitants en 1885 à plus de 5 000 aujourd'hui. Localité la plus peuplée de la commune."
+  },
+
+  "transports": {
+    "bus": {
+      "lignes_principales": ["5", "24", "29", "455", "461", "501"],
+      "arrets_principaux": ["Howald, P&R Howald", "Howald Gare Routière", "Howald, Op Der Stirzel", "Howald, Bei Der Kierch", "Howald, 9 Mai 1944", "Howald, AM Houwaldsbierg", "Howald, Ronneboesch"],
+      "operateurs": ["AVL", "RGTR", "TICE"],
+      "note": "Gare routière multimodale avec connexions vers tout le pays"
+    },
+    "tram": {
+      "ligne": "T1",
+      "arret": "Howald Gare",
+      "destinations": "Aéroport Findel ↔ Stade de Luxembourg (Cloche d'Or)",
+      "frequence": "Toutes les 4-6 minutes en heure de pointe",
+      "premier_tram": "04:01",
+      "dernier_tram": "00:50",
+      "note": "Connexion directe avec Luxembourg-Ville, Kirchberg, Cloche d'Or. Gratuit."
+    },
+    "train": {
+      "gare": "Gare de Howald",
+      "mise_en_service": "10 décembre 2017",
+      "lignes": ["RB", "RE", "TER"],
+      "destinations": "Luxembourg, Bettembourg, Esch-sur-Alzette, Thionville, Troisvierges, Rodange",
+      "premier_train": "05:06",
+      "dernier_train": "00:24",
+      "passagers_jour_prevus": 24000,
+      "note": "Pôle d'échange multimodal train-bus-tram. Accès direct Cloche d'Or et Ban de Gasperich."
+    },
+    "citybus": {
+      "hesper_citybus": true,
+      "flexibus": true
+    },
+    "veloh": {
+      "stations": true
+    },
+    "pr_parking": {
+      "nom": "P+R Luxembourg Sud / P+R Howald",
+      "note": "Parking relais avec connexion tram, train et bus"
+    },
+    "acces_autoroute": {
+      "A1": "Accès direct",
+      "A3": "Proche échangeur",
+      "A6": "Via pont boulevard de Kockelscheuer",
+      "note": "Nœud autoroutier stratégique, connexions France/Allemagne/Belgique"
+    },
+    "distances": {
+      "luxembourg_centre": {"voiture_min": 5, "tram_min": 15, "train_min": 5},
+      "cloche_dor": {"voiture_min": 3, "tram_min": 5, "a_pied_min": 15},
+      "kirchberg": {"voiture_min": 12, "tram_min": 25},
+      "aeroport_findel": {"voiture_min": 12, "tram_min": 34},
+      "gare_thionville": {"voiture_min": 20, "train_min": 20}
+    },
+    "mobilite_douce": {
+      "piste_cyclable": "Piste cyclable reliant Hesperange, Howald et Cloche d'Or (en développement)",
+      "points_recharge_ve": "Prévus dans le quartier Howald City"
+    }
+  },
+
+  "education": {
+    "ecoles_fondamentales": [
+      {
+        "nom": "École fondamentale de Howald",
+        "cycles": "Cycle 1 à Cycle 4"
+      }
+    ],
+    "creches": [
+      {
+        "nom": "L'Enfant Roi",
+        "adresse": "Howald",
+        "type": "Jeunes enfants",
+        "note": "Crèche reconnue pour la qualité de l'accueil"
+      }
+    ],
+    "maisons_relais": [
+      {
+        "nom": "Maison Relais Howald",
+        "ages": "3-12 ans"
+      }
+    ],
+    "lycees_proximite": ["Lycée Vauban (Gasperich, 11 min à pied)", "Lycée de Bonnevoie"],
+    "note": "Proximité immédiate des écoles européennes et internationales de Luxembourg-Ville"
+  },
+
+  "commerces_services": {
+    "supermarches": ["Cactus (Rue des Scillas)"],
+    "zone_commerciale": {
+      "nom": "Zone commerciale Rue des Scillas",
+      "description": "Zone en pleine mutation avec l'arrivée du tram, commerces et services"
+    },
+    "centre_commercial_proche": {
+      "nom": "Cloche d'Or Shopping Center",
+      "distance_voiture_min": 3,
+      "distance_a_pied_min": 15
+    },
+    "pharmacies": ["Pharmacie de l'Éléphant (4, Rue Joseph Felten)"],
+    "restaurants": {
+      "nombre_estime": 8,
+      "note": "Offre en développement avec le projet Howald City"
+    },
+    "projet_howald_city": {
+      "surface_ha": 37,
+      "description": "Quartier mixte : logements, bureaux, services, commerces",
+      "promoteurs": ["IKO Real Estate", "Baltisse", "BPI RE", "Lone Star Funds", "Lafayette", "Lalux Assurances", "Capelli"],
+      "note": "Projet urbain majeur transformant Howald en quartier de vie moderne"
+    },
+    "note": "Environnement très urbain avec de nombreuses zones d'activités économiques"
+  },
+
+  "loisirs_sport": {
+    "parcs": ["Proximité de la forêt", "Accès rapide Hesper Park"],
+    "note": "Quartier en transformation, de nombreux espaces verts prévus dans le projet Howald City"
+  },
+
+  "sante": {
+    "pharmacies": ["Pharmacie de l'Éléphant"],
+    "medecins": true,
+    "hopital_proche": {
+      "nom": "Centre Hospitalier de Luxembourg (CHL)",
+      "distance_km": 4
+    }
+  },
+
+  "immobilier": {
+    "prix_moyen_m2_vente": 8800,
+    "tendance": "hausse",
+    "annee_reference": 2025,
+    "types_biens_dominants": ["Appartements neufs (VEFA)", "Penthouses", "Studios investisseurs"],
+    "atouts": "Tram T1, gare multimodale, proximité Cloche d'Or, projet Howald City",
+    "investissement": {
+      "note": "Forte attractivité pour l'investissement locatif grâce à la gare multimodale et au tram",
+      "rendement_attractif": true
+    },
+    "source": "Immotop.lu / justarrived.lu"
+  },
+
+  "administration": {
+    "rattachement": "Administration communale de Hesperange",
+    "adresse_mairie": "474, route de Thionville, L-5886 Hesperange"
+  },
+
+  "accessibilite_score": {
+    "transports": 5,
+    "commerces_a_pied": 4,
+    "ecoles_proximite": 4,
+    "espaces_verts": 3,
+    "sur_5": true,
+    "note": "Meilleure desserte transport de la commune : tram, train, bus, P+R"
+  },
+
+  "points_forts": [
+    "Unique localité de la commune desservie par le tram T1",
+    "Gare multimodale train + bus + tram (24 000 passagers/jour prévus)",
+    "À 3 minutes de la Cloche d'Or en voiture",
+    "Projet Howald City : 37 hectares de quartier mixte en développement",
+    "P+R Luxembourg Sud pour les frontaliers",
+    "Connexion directe vers l'aéroport Findel en tram (34 min)",
+    "Transports publics 100% gratuits",
+    "Zone idéale pour l'investissement locatif"
+  ],
+
+  "sources": [
+    "hesperange.lu",
+    "howald-city.lu",
+    "immotop.lu",
+    "Wikipedia Gare de Howald",
+    "moovitapp.com"
+  ],
+
+  "derniere_mise_a_jour": "2025-02"
+}

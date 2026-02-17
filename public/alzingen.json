@@ -1,0 +1,174 @@
+{
+  "localite": "Alzingen",
+  "nom_luxembourgeois": "Alzeng",
+  "commune": "Hesperange",
+  "code_postal": "L-5817 / L-5818 / L-5819 / L-5821",
+  "chef_lieu": false,
+
+  "demographique": {
+    "population": 3100,
+    "annee_reference": 2025,
+    "evolution": {
+      "1880": 446,
+      "1955": 410,
+      "2021": 2300,
+      "2025": 3100
+    },
+    "note": "Croissance forte ces dernières décennies grâce aux nouveaux quartiers résidentiels. Fusion avec la commune de Hesperange en 1823."
+  },
+
+  "transports": {
+    "bus": {
+      "lignes_principales": ["RGTR (lignes régionales)"],
+      "operateurs": ["RGTR", "TICE"],
+      "temps_centre_ville_bus_min": 30,
+      "note": "Trajet d'environ 30 minutes en bus vers le centre-ville de Luxembourg"
+    },
+    "tram": {
+      "ligne": null,
+      "connexion": "Via Howald (tram T1)",
+      "note": "Pas de desserte directe, connexion via bus vers la gare de Howald"
+    },
+    "train": {
+      "gare_proche": "Gare de Howald",
+      "distance_km": 3
+    },
+    "citybus": {
+      "hesper_citybus": true,
+      "flexibus": true
+    },
+    "acces_autoroute": {
+      "N3": "Route nationale 3 traverse le centre (Luxembourg-Frisingen)",
+      "A1": "Accès proche",
+      "A3": "Accès via échangeur Hesperange"
+    },
+    "distances": {
+      "luxembourg_centre": {"voiture_min": 10, "bus_min": 30},
+      "cloche_dor": {"voiture_min": 10, "velo_min": 15, "bus_min": 20},
+      "kirchberg": {"voiture_min": 18},
+      "aeroport_findel": {"voiture_min": 18}
+    }
+  },
+
+  "education": {
+    "ecoles_fondamentales": [
+      {
+        "nom": "École fondamentale d'Alzingen",
+        "cycles": "Cycle 1 à Cycle 4",
+        "note": "Nouvelle école construite dans le quartier Rothweit II (architecte BFF), avec terrain de sport sur le toit"
+      }
+    ],
+    "maisons_relais": [
+      {
+        "nom": "Maison Relais Mini-Reewiermercher",
+        "ages": "3-6 ans",
+        "cycles": "Précoce et Cycle 1",
+        "note": "Pour les enfants inscrits à l'école fondamentale d'Alzingen"
+      },
+      {
+        "nom": "Maison Relais Reewiermercher",
+        "ages": "6-12 ans",
+        "cycles": "Cycle 2.1 à Cycle 4.2",
+        "note": "Pour les enfants inscrits à l'école fondamentale d'Alzingen"
+      }
+    ],
+    "creches": [
+      {
+        "nom": "Crèche Charly",
+        "adresse": "12B, rue de l'Église, L-5819 Alzingen",
+        "type": "Jeunes enfants"
+      }
+    ]
+  },
+
+  "commerces_services": {
+    "banques": ["Raiffeisen (agence bancaire)"],
+    "zone_industrielle": {
+      "nom": "Zone industrielle d'Alzingen",
+      "localisation": "Le long de la N3",
+      "note": "En cours d'agrandissement, dynamique commerciale croissante"
+    },
+    "centre_commercial_proche": {
+      "nom": "Cloche d'Or Shopping Center",
+      "distance_voiture_min": 10,
+      "distance_velo_min": 15,
+      "distance_bus_min": 20
+    },
+    "camping": {
+      "existe": true,
+      "nom": "Camping d'Alzingen",
+      "note": "Camping idéal pour visiter Luxembourg-Ville, à quelques km de la capitale"
+    },
+    "restaurants": {
+      "nombre_estime": 5,
+      "note": "Quelques restaurants locaux, ambiance village"
+    },
+    "note": "Village résidentiel avec commerces essentiels. Dynamique en croissance avec l'agrandissement de la zone industrielle."
+  },
+
+  "loisirs_sport": {
+    "parcs": ["Proximité Hesper Park"],
+    "patrimoine": [
+      {
+        "description": "Vestiges d'un pont romain sur l'Alzette (diverticulum reliant deux voies romaines vers Trèves)"
+      }
+    ],
+    "camping": "Camping d'Alzingen (tourisme)",
+    "note": "Cadre champêtre entre résidentiel et rural, idéal pour les balades le long de l'Alzette"
+  },
+
+  "sante": {
+    "medecins": true,
+    "pharmacies": true,
+    "hopital_proche": {
+      "nom": "Centre Hospitalier de Luxembourg (CHL)",
+      "distance_km": 7
+    }
+  },
+
+  "immobilier": {
+    "prix_moyen_m2_vente": 9450,
+    "tendance": "stable_haut",
+    "annee_reference": "décembre 2025",
+    "types_biens_dominants": ["Maisons jumelées", "Résidences VEFA", "Maisons individuelles"],
+    "atouts": "Localité la plus chère de la commune, cadre résidentiel prisé, nouvelles constructions",
+    "note": "Prix les plus élevés de la commune de Hesperange",
+    "source": "Immotop.lu"
+  },
+
+  "administration": {
+    "rattachement": "Administration communale de Hesperange",
+    "adresse_mairie": "474, route de Thionville, L-5886 Hesperange",
+    "histoire": "Ancienne commune indépendante, fusionnée avec Hesperange en 1823"
+  },
+
+  "accessibilite_score": {
+    "transports": 3,
+    "commerces_a_pied": 2,
+    "ecoles_proximite": 5,
+    "espaces_verts": 4,
+    "sur_5": true,
+    "note": "Cadre résidentiel calme, école neuve, mais transports en commun plus limités"
+  },
+
+  "points_forts": [
+    "Localité la plus prisée de la commune (prix m² les plus élevés)",
+    "Nouvelle école fondamentale moderne (quartier Rothweit II)",
+    "Vestiges romains (pont sur l'Alzette)",
+    "Camping touristique à proximité de Luxembourg-Ville",
+    "Cadre résidentiel calme entre ville et campagne",
+    "Zone industrielle en expansion (dynamique économique)",
+    "Agence Raiffeisen sur place",
+    "20 min en bus de la Cloche d'Or"
+  ],
+
+  "sources": [
+    "hesperange.lu",
+    "immotop.lu",
+    "justarrived.lu",
+    "paperjam.lu",
+    "mapcarta.com"
+  ],
+
+  "derniere_mise_a_jour": "2025-02"
+}
