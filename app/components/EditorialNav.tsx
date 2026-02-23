@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -56,21 +56,16 @@ const PHONE_HREF = 'tel:+35227456789'
 // HOOKS
 // ============================================
 
-/** Hide on scroll down, show on scroll up + scrolled state */
+/** Scrolled state for visual changes only */
 function useSmartScroll() {
-  const [visible, setVisible] = useState(true)
   const [scrolled, setScrolled] = useState(false)
-  const lastScrollY = useRef(0)
   const ticking = useRef(false)
 
   useEffect(() => {
     const handleScroll = () => {
       if (!ticking.current) {
         window.requestAnimationFrame(() => {
-          const currentY = window.scrollY
-          setScrolled(currentY > 20)
-          setVisible(currentY < lastScrollY.current || currentY < 100)
-          lastScrollY.current = currentY
+          setScrolled(window.scrollY > 20)
           ticking.current = false
         })
         ticking.current = true
@@ -81,7 +76,7 @@ function useSmartScroll() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  return { visible, scrolled }
+  return { scrolled }
 }
 
 // ============================================
@@ -175,31 +170,34 @@ function NavDropdown({
       <AnimatePresence>
         {isOpen && link.children && (
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
+            initial={{ opacity: 0, y: 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3"
           >
-            <div className="overflow-hidden border border-stone/10 bg-cream/95 shadow-xl shadow-ink/5 backdrop-blur-md">
+            <div className="overflow-hidden border border-stone/10 bg-cream/97 shadow-2xl shadow-ink/8 backdrop-blur-lg rounded-sm">
               <nav className="py-2" role="menu">
                 {link.children.map((child, i) => (
                   <motion.div
                     key={child.href}
-                    initial={{ opacity: 0, x: -8 }}
+                    initial={{ opacity: 0, x: -6 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{
-                      duration: 0.25,
-                      delay: i * 0.04,
+                      duration: 0.22,
+                      delay: i * 0.035,
                       ease: [0.22, 1, 0.36, 1],
                     }}
                   >
                     <Link
                       href={child.href}
-                      className="block px-5 py-2.5 text-body-sm text-ink transition-all duration-300 hover:bg-cream-dark/50 hover:text-brick focus:bg-cream-dark/50 focus:text-brick focus:outline-none"
+                      className="group block px-5 py-2.5 text-body-sm text-ink transition-all duration-300 hover:bg-cream-dark/60 hover:text-brick focus:bg-cream-dark/60 focus:text-brick focus:outline-none"
                       role="menuitem"
                     >
-                      {child.label}
+                      <span className="relative">
+                        {child.label}
+                        <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-brick/40 transition-all duration-300 group-hover:w-full" />
+                      </span>
                     </Link>
                   </motion.div>
                 ))}
@@ -249,7 +247,7 @@ function HamburgerButton({
   )
 }
 
-/** Fullscreen mobile menu with clip-path reveal from burger position */
+/** Fullscreen mobile menu with clip-path reveal */
 function MobileMenu({
   isOpen,
   onClose,
@@ -398,10 +396,26 @@ function MobileMenu({
 }
 
 // ============================================
+// SCROLL PROGRESS BAR
+// ============================================
+function ScrollProgressBar() {
+  const { scrollYProgress } = useScroll()
+  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1])
+
+  return (
+    <motion.div
+      className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-brick"
+      style={{ scaleX }}
+      aria-hidden="true"
+    />
+  )
+}
+
+// ============================================
 // MAIN COMPONENT
 // ============================================
 export default function EditorialNav(): JSX.Element {
-  const { visible, scrolled } = useSmartScroll()
+  const { scrolled } = useSmartScroll()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
 
@@ -445,36 +459,60 @@ export default function EditorialNav(): JSX.Element {
         Aller au contenu principal
       </a>
 
-      <motion.header
-        animate={{ y: visible || isMobileMenuOpen ? 0 : '-100%' }}
-        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      <header
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ease-editorial ${
           scrolled
-            ? 'border-b border-stone/10 bg-cream/90 shadow-sm shadow-ink/5 backdrop-blur-xl'
+            ? 'border-b border-stone/10 bg-cream/92 shadow-sm shadow-ink/5 backdrop-blur-xl'
             : 'bg-transparent'
         }`}
       >
+        {/* Scroll progress bar */}
+        <ScrollProgressBar />
+
         <div className="mx-auto max-w-[1800px] px-6 sm:px-8 lg:px-12 xl:px-16">
           <nav className="flex h-16 items-center justify-between lg:h-20" aria-label="Navigation principale">
-            {/* Logo */}
-            <Link
-              href="/"
-              className="relative z-50 h-10 w-32 transition-opacity duration-300 hover:opacity-80 focus:outline-none focus-visible:opacity-80 lg:h-11 lg:w-36"
-              aria-label="Fidelis Hesperange — Accueil"
-            >
-              <Image
-                src="/images/logo.png"
-                alt="Fidelis Hesperange"
-                fill
-                className="object-contain object-left"
-                priority
-              />
-            </Link>
+
+            {/* Logo + tagline (desktop scrolled) */}
+            <div className="relative z-50 flex items-center gap-0">
+              <Link
+                href="/"
+                className="relative h-10 w-32 transition-opacity duration-300 hover:opacity-80 focus:outline-none focus-visible:opacity-80 lg:h-11 lg:w-36"
+                aria-label="Fidelis Hesperange — Accueil"
+              >
+                <Image
+                  src="/images/logo.png"
+                  alt="Fidelis Hesperange"
+                  fill
+                  className="object-contain object-left"
+                  priority
+                />
+              </Link>
+
+              <AnimatePresence>
+                {scrolled && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -6 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -6 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                    className="hidden xl:flex items-center gap-3 ml-4"
+                    aria-hidden="true"
+                  >
+                    <span className="h-5 w-px bg-stone/30" />
+                    <span className="text-caption uppercase tracking-[0.22em] text-stone-dark/70">
+                      Immobilier · Hesperange
+                    </span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden items-center gap-9 lg:flex">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href || pathname.startsWith(link.href.replace('/#', '/'))
+                const isActive =
+                  pathname === link.href ||
+                  pathname.startsWith(link.href.replace('/#', '/'))
 
                 return link.children ? (
                   <NavDropdown key={link.href} link={link} isActive={isActive} />
@@ -499,11 +537,17 @@ export default function EditorialNav(): JSX.Element {
                 <Phone className="h-4 w-4" strokeWidth={1.5} />
                 <span className="hidden xl:inline">{PHONE_NUMBER}</span>
               </a>
+
+              {/* Contact button — clip-path fill */}
               <Link
                 href="/contact"
-                className="inline-flex items-center bg-ink px-6 py-2.5 text-body-sm font-medium tracking-wide text-cream transition-all duration-500 ease-editorial hover:-translate-y-0.5 hover:bg-brick hover:shadow-lg hover:shadow-brick/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-brick focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
+                className="group relative inline-flex items-center overflow-hidden border border-ink px-6 py-2.5 text-body-sm font-medium tracking-wide text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-brick focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
               >
-                Contact
+                {/* Fill layer slides in from left */}
+                <span className="absolute inset-0 origin-left scale-x-0 bg-ink transition-transform duration-400 ease-editorial group-hover:scale-x-100" />
+                <span className="relative transition-colors duration-400 group-hover:text-cream">
+                  Contact
+                </span>
               </Link>
             </div>
 
@@ -523,7 +567,7 @@ export default function EditorialNav(): JSX.Element {
             </div>
           </nav>
         </div>
-      </motion.header>
+      </header>
 
       {/* Mobile Menu Overlay */}
       <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
